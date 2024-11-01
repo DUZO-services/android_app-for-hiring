@@ -10,6 +10,7 @@ class CustomPalette {
   static const Color warmYellow = Color(0xFFF2BC69);
   static const Color softOrange = Color(0xFFFFD29E);
   static const Color darkYellow = Color(0xFFFF9900);
+  static const Color lightYellow = Color.fromARGB(76, 255, 153, 0);
   static const Color lightBlue = Color(0xFF83B2DE);
   static const Color mutedBlue = Color(0xFF6791A3);
 }

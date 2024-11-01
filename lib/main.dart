@@ -5,9 +5,7 @@ import 'package:duzo/pages/home/nav.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'pages/home/home.dart';
 import 'pages/login/login.dart';
-import 'palette.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
