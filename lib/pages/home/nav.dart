@@ -1,3 +1,5 @@
+import 'package:duzo/pages/home/home.dart';
+import 'package:duzo/pages/home/profile.dart';
 import 'package:duzo/palette.dart';
 import 'package:flutter/material.dart';
 
@@ -13,18 +15,16 @@ class _navbarState extends State<navbar> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
+    Home(),
     Text(
-      'Index 0: Home',
+      '',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      '',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    Profile()
   ];
 
   void _onItemTapped(int index) {
@@ -35,11 +35,50 @@ class _navbarState extends State<navbar> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.sizeOf(context).width;
-    double height = MediaQuery.sizeOf(context).height;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: CustomPalette.lightPeach,
+      appBar: _buildAppBar(),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+          // sets the background color of the `BottomNavigationBar`
+          canvasColor: CustomPalette.lightPeach,
+          // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: const Color.fromARGB(255, 18, 38, 221),
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_filled),
+              label: '▬',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.wallet_outlined),
+              label: '▬',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month_rounded),
+              label: '▬',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: '▬',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black,
+          onTap: _onItemTapped,
+        ),
+      ),
+    
+    );
+  }
+  AppBar _buildAppBar() {
+    double height = MediaQuery.sizeOf(context).height;
+    return AppBar(
+      backgroundColor: CustomPalette.lightYellow,
         title: Container(
             child: Image.asset(
                   "assets/logo.png",
@@ -48,34 +87,10 @@ class _navbarState extends State<navbar> {
                 ),
           ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
+          borderRadius: BorderRadius.all(
+            Radius.circular(_selectedIndex == 3 ? 0 : 30)
           ),
         ),
-      ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
-    
     );
   }
 }
