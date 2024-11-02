@@ -1,16 +1,56 @@
-# duzo
+# Duzo
 
-A new Flutter project.
+## Pages
 
-## Getting Started
+> ### Splash Screen
+<img src="splashscreen.jpg" width="200">
 
-This project is a starting point for a Flutter application.
+> ### Login
+<img src="login.jpg" width="200">
 
-A few resources to get you started if this is your first Flutter project:
+> ### Signup
+<img src="signup.jpg" width="200">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+> ### Job Positions
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+> ### Details Page
+
+
+> ### Applied pop up
+
+
+> ### Learning dashboard
+
+
+> ### Lecture and tests
+
+
+> ### Home Page
+<img src="home.jpg" width="200">
+
+> ### Earnings Page
+
+
+> ### Calender
+
+
+> ### Profile
+<img src="profilepage.jpg" width="200">
+
+***
+***
+
+## Backend
+
+> ### user profile
+> currently it is connected with email and password
+
+> ### details fetching
+
+> ### language
+
+> ### order fetching
+
+> ### location fetching
+
